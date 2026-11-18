@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Cuore per te</title>
+<style>
+  body {
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+    font-family: monospace;
+  }
+  .heart {
+    width: 100px;
+    height: 100px;
+    background: #ff2d55;
+    position: relative;
+    transform: rotate(-45deg);
+    animation: battito 0.9s infinite;
+    box-shadow: 0 0 50px #ff2d55;
+  }
+  .heart:before, .heart:after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    background: #ff2d55;
+    border-radius: 50%;
+    position: absolute;
+  }
+  .heart:before { top: -50px; left: 0; }
+  .heart:after { left: 50px; top: 0; }
+  @keyframes battito {
+    0% { transform: rotate(-45deg) scale(1); }
+    30% { transform: rotate(-45deg) scale(1.25); }
+    50% { transform: rotate(-45deg) scale(1); }
+    70% { transform: rotate(-45deg) scale(1.25); }
+    100% { transform: rotate(-45deg) scale(1); }
+  }
+  .testo {
+    color: white;
+    margin-top: 70px;
+    font-size: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="heart"></div>
+  <div class="testo">if (tu == mia) { cuore.batti(); }</div>
+</body>
+</html>
